@@ -2,7 +2,7 @@
 nome = "Nathianny";
 sobreNome = "Pereira";
 idade = 27
-frase = "Obrigado pela preferência, cliente ";
+frase = "Obrigado pela preferência, volte sempre!";
 
 # Questão 1
 print(f"Olá, meu nome é {nome} e tenho {idade} anos");
@@ -21,7 +21,7 @@ print(frase.upper());
 print(frase.split());
 
 # Questão 6
-novaFrase = frase.replace("Obrigado", "preferência");
+novaFrase = frase.replace("Obrigado", "volte");
 print(novaFrase);
 
 # Questão 7
