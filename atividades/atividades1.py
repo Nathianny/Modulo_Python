@@ -1,4 +1,3 @@
-
 nome = "Nathianny";
 sobreNome = "Pereira";
 idade = 27
