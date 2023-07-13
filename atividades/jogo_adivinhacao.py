@@ -11,8 +11,9 @@ import random
 
 def adivinhacao():
     numero_secreto = random.randint(1, 100)  # Gera um número aleatório entre 1 e 100
-    tentativas = 0
-    
+    tentativas = 5
+    inferior = 1
+    superior = 10
 
     print("Bem-vindo ao jogo de adivinhação de números!")
     print("Estou pensando em um número entre 1 e 100.")
