@@ -11,7 +11,7 @@ import random
 
 def adivinhacao():
     print("Bem-vindo ao jogo de adivinhação de números!")
-    print("Vamos personalizar o jogo!")
+    print("Vamos começar! Mas antes...")
 
     limite_inferior = int(input("Digite o limite inferior do intervalo de números: "))
     limite_superior = int(input("Digite o limite superior do intervalo de números: "))
@@ -38,8 +38,8 @@ def adivinhacao():
     if tentativas == max_tentativas:
         print(f"\nSuas tentativas acabaram! O número correto era {numero_secreto}.")
 
-    jogar_novamente = input("\nDeseja jogar novamente? (s/n): ")
-    if jogar_novamente.lower() == "s":
+    jogar_novamente = input("\nDeseja jogar novamente? (sim/não): ")
+    if jogar_novamente.lower() == "sim":
         adivinhacao()
     else:
         print("\nObrigado por jogar! Até a próxima.")
