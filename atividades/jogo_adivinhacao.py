@@ -6,20 +6,25 @@
 # - Adicionar limite máximo de tentativas
 # - Permitir que o jogador escolha o intervalo de números
 # - Incluir uma opção para o jogador jogar novamente ou sair do jogo após acertar ou esgotar todas as tentativas.'''
-   
+
 import random
 
 def adivinhacao():
-    numero_secreto = random.randint(1, 100)  # Gera um número aleatório entre 1 e 100
-    tentativas = 5
-    inferior = 1
-    superior = 10
-
     print("Bem-vindo ao jogo de adivinhação de números!")
-    print("Estou pensando em um número entre 1 e 100.")
+    print("Vamos personalizar o jogo!")
 
-    while True:
-        palpite = int(input("Digite o seu palpite: "))
+    limite_inferior = int(input("Digite o limite inferior do intervalo de números: "))
+    limite_superior = int(input("Digite o limite superior do intervalo de números: "))
+    max_tentativas = int(input("Digite o número máximo de tentativas: "))
+
+    numero_secreto = random.randint(limite_inferior, limite_superior)
+    tentativas = 0
+
+    print(f"\nOK! Estou pensando em um número entre {limite_inferior} e {limite_superior}.")
+    print(f"Você tem no máximo {max_tentativas} tentativas.")
+
+    while tentativas < max_tentativas:
+        palpite = int(input("\nDigite o seu palpite: "))
         tentativas += 1
 
         if palpite < numero_secreto:
@@ -29,5 +34,14 @@ def adivinhacao():
         else:
             print(f"Parabéns! Você acertou o número em {tentativas} tentativas!")
             break
+
+    if tentativas == max_tentativas:
+        print(f"\nSuas tentativas acabaram! O número correto era {numero_secreto}.")
+
+    jogar_novamente = input("\nDeseja jogar novamente? (s/n): ")
+    if jogar_novamente.lower() == "s":
+        adivinhacao()
+    else:
+        print("\nObrigado por jogar! Até a próxima.")
 
 adivinhacao()
